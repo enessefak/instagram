@@ -9,6 +9,9 @@ app.set('view engine', 'pug')
 
 app.get('/', (req, res) => res.render('index'))
 
-app.get('/auth', (req, res) => res.send('Hello World!'))
+app.get('/auth', (req, res) => {
+    const { code } = req.query
+    res.render('auth', { authCode: code })
+})
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

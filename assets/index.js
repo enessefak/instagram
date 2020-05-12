@@ -1,9 +1,15 @@
-const {appId, redirectUri, scope } = {
-    appId: '2589814177943223',
-    redirectUri: 'https://senintablon.herokuapp.com/auth',
-    scope: 'user_profile,user_media'
+const urlParams = new URLSearchParams(window.location.search);
+const code = urlParams.get('code');
+
+const requestBody = {
+    appId: '2941726619215643',
+    clientSecret="9056d311cdf30670af3689a5261ab282",
+    redirectUri: 'https://senintablon.herokuapp.com',
+    code
 }
 
-fetch(`https://api.instagram.com/oauth/authorize?client_id=2941726619215643&redirect_uri=https://senintablon.herokuapp.com/auth&scope=user_profile,user_media&response_type=code`)
-.then(res => res.json())
-.then(data => console.log(data))
+fetch('https://api.instagram.com/oauth/access_token', {
+    method: 'post',
+    body: JSON.stringify(requestBody)
+  }).then(res => res.json())
+    .then(data => console.log(data))
