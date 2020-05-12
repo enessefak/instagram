@@ -1,6 +1,6 @@
 const {appId, redirectUri, scope } = {
-    appId: '',
-    redirectUri: 'auth.html',
+    appId: '2589814177943223',
+    redirectUri: 'auth',
     scope: 'user_profile,user_media'
 }
 

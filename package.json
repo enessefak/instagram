@@ -1,12 +1,12 @@
 {
   "name": "instagram",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "build": "parcel build ./assets/index.js --public-url ./public/ -d ./public",
-    "dev": "parcel watch ./assets/index.js --public-url ./public/  -d ./public"
+    "watch": "parcel watch ./assets/index.js --public-url ./public/  -d ./public"
   },
   "dependencies": {
     "express": "^4.17.1",
