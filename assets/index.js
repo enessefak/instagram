@@ -24,7 +24,7 @@ fetch('https://api.instagram.com/oauth/access_token', {
     body: JSON.stringify(requestBody)
   }).then(res => res.json())
     .then(data => {
-        document.getElementById('code').innerHTML = JSON.stringify(code);
+        document.getElementById('code').innerHTML = JSON.stringify(data);
         console.log(data)
         getImages(data['access_token'])
     })
