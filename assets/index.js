@@ -1,6 +1,6 @@
 const {appId, redirectUri, scope } = {
     appId: '2589814177943223',
-    redirectUri: 'auth',
+    redirectUri: 'https://senintablon.herokuapp.com/auth',
     scope: 'user_profile,user_media'
 }
 
