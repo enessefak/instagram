@@ -2,10 +2,21 @@ const urlParams = new URLSearchParams(window.location.search);
 const code = urlParams.get('code');
 
 const requestBody = {
-    appId: '2941726619215643',
-    clientSecret: "9056d311cdf30670af3689a5261ab282",
-    redirectUri: 'https://senintablon.herokuapp.com',
+    'client_id': '2941726619215643',
+    'client_secret': "9056d311cdf30670af3689a5261ab282",
+    'grant_type': 'authorization_code',
+    'redirect_uri': 'https://senintablon.herokuapp.com',
     code
+}
+
+const getImages = (token) => {
+    fetch(`https://graph.instagram.com/me/media?fields=id,caption,thumbnail_url,media_url,media_type&access_token=${token}`, {
+    method: 'get',
+  }).then(res => res.json())
+    .then(data => {
+        document.getElementById('images').innerHTML = JSON.stringify(data);
+        console.log(data)
+    })
 }
 
 fetch('https://api.instagram.com/oauth/access_token', {
@@ -13,6 +24,7 @@ fetch('https://api.instagram.com/oauth/access_token', {
     body: JSON.stringify(requestBody)
   }).then(res => res.json())
     .then(data => {
-        document.getElementById('code').innerHTML = data;
+        document.getElementById('code').innerHTML = JSON.stringify(code);
         console.log(data)
+        getImages(data['access_token'])
     })
