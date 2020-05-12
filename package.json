@@ -4,10 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel build ./index.html",
-    "serve": "parcel serve watch ./index.html"
+    "start": "node server.js",
+    "build": "parcel build ./assets/index.js",
+    "watch": "parcel watch ./assets/index.js"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.4"
+    "express": "^4.17.1",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4"
   }
 }
