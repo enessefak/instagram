@@ -1,0 +1,13 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel build ./index.html",
+    "serve": "parcel serve watch ./index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
