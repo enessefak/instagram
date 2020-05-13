@@ -12,7 +12,7 @@ const getImages = (token) => {
     fetch(`https://graph.instagram.com/me/media?fields=id,caption,thumbnail_url,media_url,media_type&access_token=${token}`, {
     method: 'get',
   }).then(res => res.json())
-    .then(data => {
+    .then(({ data }) => {
         console.log(data, data.length)
         for (let index = 0; index < data.length; index++) {
             const media = data[index];
