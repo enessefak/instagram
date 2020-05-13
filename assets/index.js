@@ -5,7 +5,7 @@ let formData = new FormData();
 formData.append('client_id', '2941726619215643');
 formData.append('client_secret', '9056d311cdf30670af3689a5261ab282');
 formData.append('grant_type', 'authorization_code');
-formData.append('redirect_uri', 'https://senintablon.herokuapp.com/auth');
+formData.append('redirect_uri', 'https://senintablon.herokuapp.com');
 formData.append('code', code);
 
 const getImages = (token) => {
