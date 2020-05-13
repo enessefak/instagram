@@ -13,18 +13,14 @@ const getImages = (token) => {
     method: 'get',
   }).then(res => res.json())
     .then(({ data }) => {
-        console.log(data, data.length)
         for (let index = 0; index < data.length; index++) {
             const media = data[index];
-
-            console.log(media)
             
             if (media.media_type === "IMAGE") {
                 const $img = document.createElement('img')
                 $img.src = media.media_url
                 $img.title = media.caption || ''
 
-                console.log($img)
                 document.getElementById('images').appendChild($img)
             }
         }
@@ -36,7 +32,5 @@ fetch('https://api.instagram.com/oauth/access_token', {
     body: formData
   }).then(res => res.json())
     .then(data => {
-        document.getElementById('code').innerHTML = JSON.stringify(data);
-        console.log(data)
         getImages(data['access_token'])
     })
