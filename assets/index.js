@@ -1,15 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const code = urlParams.get('code');
 
-const requestBody = {
-    'client_id': '2941726619215643',
-    'client_secret': "9056d311cdf30670af3689a5261ab282",
-    'grant_type': 'authorization_code',
-    'redirect_uri': 'https://senintablon.herokuapp.com',
-    code
-}
-
-
 let formData = new FormData();
 formData.append('client_id', '2941726619215643');
 formData.append('client_secret', '9056d311cdf30670af3689a5261ab282');
