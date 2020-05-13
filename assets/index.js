@@ -20,7 +20,7 @@ const getImages = (token) => {
                 const $img = document.createElement('img')
                 $img.src = media.media_url
                 $img.title = media.caption || ''
-                $img.width = '300px'
+                $img.width = 300
 
                 document.getElementById('images').appendChild($img)
             }
