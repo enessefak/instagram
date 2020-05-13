@@ -15,15 +15,18 @@ const getImages = (token='IGQVJXZADJPZATY1QjdVM09sOWJQazRaYmg5ZAFJHRVVvN2pFYVZAS
     .then(data => {
         for (let index = 0; index < data.length; index++) {
             const media = data[index];
+
+            console.log(media)
             
             if (media.media_type === "IMAGE") {
                 const $img = document.createElement('img')
                 $img.src = media.media_url
                 $img.title = media.caption || ''
+
+                console.log($img)
                 document.getElementById('images').appendChild($img)
             }
         }
-        console.log(data)
     })
 }
 
