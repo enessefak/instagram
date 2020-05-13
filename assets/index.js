@@ -13,6 +13,7 @@ const getImages = (token) => {
     method: 'get',
   }).then(res => res.json())
     .then(data => {
+        console.log(data, data.length)
         for (let index = 0; index < data.length; index++) {
             const media = data[index];
 
