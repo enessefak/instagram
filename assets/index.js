@@ -8,7 +8,7 @@ formData.append('grant_type', 'authorization_code');
 formData.append('redirect_uri', 'https://senintablon.herokuapp.com/auth');
 formData.append('code', code);
 
-const getImages = (token='IGQVJXZADJPZATY1QjdVM09sOWJQazRaYmg5ZAFJHRVVvN2pFYVZASVnZAZAMmM5dDhWWU1PdEhtOFNNOG55VGdqbUYzdFVtRHNpdHZAvTENMOGhyQXdDUzZApdVpMWmtnUGtObDg2M2FoTXF0UVFuTFdRLVJTOAZDZD') => {
+const getImages = (token) => {
     fetch(`https://graph.instagram.com/me/media?fields=id,caption,thumbnail_url,media_url,media_type&access_token=${token}`, {
     method: 'get',
   }).then(res => res.json())
