@@ -7,8 +7,10 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'pug')
 
-app.get('/', (req, res) => res.render('index'))
-
+app.get('/', (req, res) => {
+    const { code } = req.query
+    res.render('index', { authCode: code })
+})
 app.get('/auth', (req, res) => {
     const { code } = req.query
     res.render('auth', { authCode: code })
