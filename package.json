@@ -9,7 +9,7 @@
     "watch": "parcel watch ./assets/index.js --public-url ./public/  -d ./public"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pug": "^2.0.4"
   },
   "devDependencies": {
